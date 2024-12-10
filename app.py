@@ -1,9 +1,10 @@
 import streamlit as st
 import pandas as pd
-import joblib
+import pickle
 
 # Carregar o modelo treinado
-model = joblib.load('modelo_adaBoost.pkl')
+with open('modelo_adaBoost.pkl', 'rb') as f:
+    model = pickle.load(f)
 
 # Título da página
 st.title("Previsão de Nota Final - Estudantes do Ensino Médio")
